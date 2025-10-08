@@ -13,13 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Copie du fichier Q4.java vers Q4_archive_$(date '+%d-%m-%Y').txt + Nom et prénom
+      - name: Copie du fichier Q4.java vers Q4_archive_${{(date '+%d-%m-%Y')}}.txt + Nom et prénom
         run: |
-          echo "Archive java - Q4" > Q4_archive_$(date '+%d-%m-%Y').txt
-          echo "Nom : Thomazeau-Agullo" >> Q4_archive_$(date '+%d-%m-%Y').txt
-          echo "Prénom : Louis" >> Q4_archive_$(date '+%d-%m-%Y').txt
-          echo "Contenu du fichier Q4.java :" >> Q4_archive_$(date '+%d-%m-%Y').txt
-          cat Q4.java >> Q4_archive_$(date '+%d-%m-%Y').txt
+          echo "Archive java - Q4" > Q4_archive_${{(date '+%d-%m-%Y')}}.txt
+          echo "Nom : Thomazeau-Agullo" >> Q4_archive_${{(date '+%d-%m-%Y')}}.txt
+          echo "Prénom : Louis" >> Q4_archive_${{(date '+%d-%m-%Y')}}.txt
+          echo "Contenu du fichier Q4.java :" >> Q4_archive_${{(date '+%d-%m-%Y')}}.txt
+          cat Q4.java >> Q4_archive_${{(date '+%d-%m-%Y')}}.txt
 
       - name: Configurer Git
         run: |
@@ -28,6 +28,6 @@ jobs:
 
       - name: Commit et push du fichier archivé
         run: |
-          git add Q4_archive_$(date '+%d-%m-%Y').txt
-          git commit -m "Ajout de Q4_archive_$(date '+%d-%m-%Y').txt depuis Q4.java"
+          git add Q4_archive_${{(date '+%d-%m-%Y')}}.txt
+          git commit -m "Ajout de Q4_archive_${{(date '+%d-%m-%Y')}}.txt depuis Q4.java"
           git push
