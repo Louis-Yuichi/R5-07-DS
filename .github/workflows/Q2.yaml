@@ -15,13 +15,13 @@ jobs:
 
       - name: Copie du fichier TOTO.txt vers Q2_archive_TOTO.txt + Nom, prénom, date et taille
         run: |
-          echo "# Archive TOTO - Q2" > Q2_archive_TOTO.txt
-          echo "**Nom :** Thomazeau-Agullo" >> Q2_archive_TOTO.txt
-          echo "**Prénom :** Louis" >> Q2_archive_TOTO.txt
-          echo "**Date et heure d'exécution :** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> Q2_archive_TOTO.txt
-          echo "## Contenu du fichier TOTO.txt :" >> Q2_archive_TOTO.txt
+          echo "Archive TOTO - Q2" > Q2_archive_TOTO.txt
+          echo "Nom : Thomazeau-Agullo" >> Q2_archive_TOTO.txt
+          echo "Prénom : Louis" >> Q2_archive_TOTO.txt
+          echo "Date et heure d'exécution : $(date '+%Y-%m-%d %H:%M:%S UTC')" >> Q2_archive_TOTO.txt
+          echo "Contenu du fichier TOTO.txt :" >> Q2_archive_TOTO.txt
           cat TOTO.txt >> Q2_archive_TOTO.txt
-          echo "## Taille du fichier TOTO.txt :" >> Q2_archive_TOTO.txt
+          echo "Taille du fichier TOTO.txt :" >> Q2_archive_TOTO.txt
           echo "" >> Q2_archive_TOTO.txt
 
       - name: Configurer Git
