@@ -1,0 +1,33 @@
+name: Q3
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  copy-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copie du fichier Q3.java vers Q3_archive_java.txt + Nom et prénom
+        run: |
+          echo "Archive java - Q3" > Q3_archive_java.txt
+          echo "Nom : Thomazeau-Agullo" >> Q3_archive_java.txt
+          echo "Prénom : Louis" >> Q3_archive_java.txt
+          echo "Contenu du fichier Q3.java :" >> Q3_archive_java.txt
+          cat Q3.java >> Q3_archive_java.txt
+
+      - name: Configurer Git
+        run: |
+          git config --global user.name Louis
+          git config --global user.email louisagullo.05@gmail.com
+
+      - name: Commit et push du fichier archivé
+        run: |
+          git add Q3_archive_java.txt
+          git commit -m "Ajout de Q3_archive_java.txt depuis Q3.java"
+          git push
