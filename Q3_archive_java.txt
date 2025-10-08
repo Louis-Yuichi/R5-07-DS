@@ -8,7 +8,7 @@ public class Q3
     {
         int n = Integer.parseInt(args[0]);
 
-        for (int cpt = 1; cpt < n; cpt++)
+        for (int cpt = 1; cpt <= n; cpt++)
         {
             System.out.print(cpt + " ");
         }
