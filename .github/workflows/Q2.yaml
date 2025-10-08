@@ -1,0 +1,36 @@
+name: Q2
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  copy-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copie du fichier TOTO.txt vers Q2_archive_TOTO.txt + Nom, prénom, date et taille
+        run: |
+          echo "# Archive TOTO - Q2" > Q2_archive_TOTO.txt
+          echo "**Nom :** Thomazeau-Agullo" >> Q2_archive_TOTO.txt
+          echo "**Prénom :** Louis" >> Q2_archive_TOTO.txt
+          echo "**Date et heure d'exécution :** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> Q2_archive_TOTO.txt
+          echo "## Contenu du fichier TOTO.txt :" >> Q2_archive_TOTO.txt
+          cat TOTO.txt >> Q2_archive_TOTO.txt
+          echo "## Taille du fichier TOTO.txt :" >> Q2_archive_TOTO.txt
+          echo "" >> Q2_archive_TOTO.txt
+
+      - name: Configurer Git
+        run: |
+          git config --global user.name Louis
+          git config --global user.email louisagullo.05@gmail.com
+
+      - name: Commit et push du fichier archivé
+        run: |
+          git add Q2_archive_TOTO.txt
+          git commit -m "Ajout de Q2_archive_TOTO.txt depuis TOTO.txt"
+          git push
