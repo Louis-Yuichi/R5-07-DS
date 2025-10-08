@@ -6,7 +6,12 @@ public class Q3
 
         for (int cpt = 1; cpt <= n; cpt++)
         {
-            System.out.print(cpt + " ");
+            for (int cpt2 = 1; cpt2 <= cpt; cpt2++)
+            {
+                System.out.print(cpt2 + " ");
+            }
+
+            System.out.println();
         }
     }
 }
