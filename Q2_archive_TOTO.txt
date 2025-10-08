@@ -1,8 +1,8 @@
 Archive TOTO - Q2
 Nom : Thomazeau-Agullo
 Prénom : Louis
-Date et heure d'exécution : 2025-10-08 14:10:40
+Date et heure d'exécution : 2025-10-08 14:46:53
 Contenu du fichier TOTO.txt :
 Text copié !
 Taille du fichier TOTO.txt :
-
+13 TOTO.txt octets
