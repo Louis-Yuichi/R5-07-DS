@@ -23,7 +23,7 @@ jobs:
           cat TOTO.txt >> Q2_archive_TOTO.txt
           echo "" >> Q2_archive_TOTO.txt
           echo "Taille du fichier TOTO.txt :" >> Q2_archive_TOTO.txt
-          echo "$(wc -c TOTO.txt) octets" >> Q2_archive_TOTO.txt
+          echo "$(wc -c 'TOTO.txt') octets" >> Q2_archive_TOTO.txt
 
       - name: Configurer Git
         run: |
